@@ -1,0 +1,14 @@
+# Virgilio Paglinawan Jr.
+
+> SEO and GEO specialist. I plan, build and maintain WordPress sites with clean markup, structured data and crawlable content, and I use prompt engineering to direct AI tools like Claude Code through implementation.
+
+## Work
+
+- [desertva.com](https://desertva.com): Managed virtual assistant company in Dubai. I own the site's build, technical SEO, AI search readiness and conversion paths.
+- [storageinuae.com](https://storageinuae.com): UAE storage sizing tool and lead generation site. Product decisions, build and SEO.
+
+## Contact
+
+- Portfolio: https://virgiliopaglinawan.github.io/
+- Email: virgiliopaglinawan@gmail.com
+- LinkedIn: https://linkedin.com/in/virgilio024

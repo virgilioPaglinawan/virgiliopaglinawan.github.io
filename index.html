@@ -5,67 +5,111 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Virgilio Paglinawan Jr. | SEO and GEO Portfolio</title>
 <meta name="description" content="Selected work by Virgilio Paglinawan Jr., SEO and GEO specialist: desertva.com and storageinuae.com.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 :root{
-  --text:#1a1f2b; --muted:#566074; --line:#e6e8ec; --link:#162b49;
-  --max:680px;
+  --ink:#0f1320; --text:#252b3a; --muted:#5d6678; --line:#e8eaee; --soft:#f5f6f8;
+  --accent:#ff4d1c; --accent-ink:#c93a10;
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#fff;color:var(--text);font:18px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--link)}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
-.text{max-width:var(--max)}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;margin:0;color:#111623}
+body{margin:0;background:#fff;color:var(--text);font:18px/1.7 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
 p{margin:0 0 1em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.label{font:500 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.label b{color:var(--accent);font-weight:500}
 
-header.top{padding:72px 0 56px}
-h1{font-size:clamp(34px,6vw,48px)}
-.lede{font-size:20px;color:var(--muted);margin-top:16px}
-.contact{margin-top:20px;font-size:16px;color:var(--muted)}
-.contact a{margin-right:18px}
+/* hero */
+.hero{padding:88px 0 72px}
+.hero h1{font:800 clamp(48px,9vw,104px)/.95 var(--head);letter-spacing:-.035em;color:var(--ink);margin:22px 0 0}
+.hero h1 span{color:var(--accent)}
+.hero .lede{font-size:clamp(19px,2.2vw,23px);line-height:1.55;color:var(--text);max-width:640px;margin:32px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-block;font:600 16px/1 var(--body);text-decoration:none;padding:15px 22px;border-radius:999px;border:2px solid var(--ink);transition:transform .15s,background .15s,color .15s}
+.btn.solid{background:var(--ink);color:#fff}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn.line:hover{background:var(--ink);color:#fff}
 
-section.case{padding:56px 0;border-top:1px solid var(--line)}
-.case-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px}
-h2{font-size:clamp(28px,4.4vw,36px)}
-.visit{font-size:16px}
-.meta{font-size:15px;color:var(--muted);margin:8px 0 24px}
-.summary{font-size:19px}
+/* project */
+.case{padding:80px 0;border-top:2px solid var(--ink)}
+.case-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.case h2{font:800 clamp(38px,7vw,76px)/1 var(--head);letter-spacing:-.03em;color:var(--ink);margin:18px 0 10px}
+.meta{color:var(--muted);font-size:16px;margin:0 0 30px}
+.visit{font:600 15px/1 var(--body);text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px}
+.visit:hover{color:var(--accent-ink)}
+.summary{font-size:clamp(20px,2.4vw,25px);line-height:1.5;color:var(--ink);max-width:760px;margin:0}
 
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:32px 0}
-.stat{border:1px solid var(--line);border-radius:10px;padding:16px 18px}
-.stat b{display:block;font:600 28px/1.1 Georgia,serif;color:var(--link)}
-.stat span{display:block;font-size:15px;color:var(--muted);margin-top:6px;line-height:1.4}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:48px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:26px 22px 26px 0}
+.stat b{display:block;font:800 clamp(34px,5vw,50px)/1 var(--head);letter-spacing:-.03em;color:var(--ink)}
+.stat span{display:block;font-size:14.5px;line-height:1.45;color:var(--muted);margin-top:10px;max-width:200px}
 
-h3{font-size:20px;margin:36px 0 12px}
-ul{margin:0 0 1em;padding-left:1.2em}
-li{margin-bottom:.7em}
+.grid{display:grid;grid-template-columns:1fr;gap:48px;margin-top:56px}
+@media(min-width:900px){.grid{grid-template-columns:1.15fr 1fr;gap:64px}}
+h3{font:700 22px/1.2 var(--head);color:var(--ink);margin:0 0 20px}
+ul.did{list-style:none;margin:0;padding:0}
+ul.did li{position:relative;padding:0 0 0 26px;margin-bottom:16px;font-size:17px;line-height:1.6}
+ul.did li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;background:var(--accent);border-radius:2px}
 
-.shots{display:grid;grid-template-columns:1fr;gap:16px;margin:36px 0 0;align-items:start}
-@media(min-width:760px){.shots.two{grid-template-columns:1.6fr 1fr}.shots.even{grid-template-columns:1fr 1fr}}
-.shot{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.shot img{display:block;width:100%;height:auto}
-.shot figcaption{font-size:14px;color:var(--muted);padding:10px 14px;border-top:1px solid var(--line)}
+/* score bars */
+.bars{margin:0;padding:0;list-style:none}
+.bars li{display:grid;grid-template-columns:96px 1fr 38px;align-items:center;gap:12px;margin-bottom:12px;font-size:14.5px}
+.bars .n{color:var(--text)}
+.bars .v{font:500 13px/1 var(--mono);color:var(--ink);text-align:right}
+.track{position:relative;height:12px;background:var(--soft);border-radius:6px;overflow:hidden}
+.track i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:var(--accent);width:var(--w);transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.js .track i{width:0}
+.js .in .track i{width:var(--w)}
+.two .track{height:14px}
+.two .track i.then{background:#c9ced8;height:6px;top:0;bottom:auto}
+.two .track i.now{height:8px;top:6px;bottom:auto}
+.key{display:flex;gap:18px;font-size:13.5px;color:var(--muted);margin:0 0 16px}
+.key span::before{content:"";display:inline-block;width:12px;height:6px;border-radius:3px;margin-right:7px;vertical-align:middle;background:var(--accent)}
+.key span.then::before{background:#c9ced8}
+.chart-note{font-size:13.5px;color:var(--muted);margin:16px 0 0}
 
-.small{font-size:15px;color:var(--muted)}
-.tools{margin-top:28px}
+/* screenshots */
+.shots{display:grid;grid-template-columns:1fr;gap:28px;margin-top:64px;align-items:start}
+@media(min-width:800px){.shots.a{grid-template-columns:1.7fr 1fr}.shots.b{grid-template-columns:1fr 1fr}}
+.frame{margin:0;border-radius:12px;border:1px solid var(--line);background:#fff;overflow:hidden;box-shadow:0 2px 0 var(--ink),0 18px 40px rgba(15,19,32,.10);transition:transform .25s}
+.frame:hover{transform:translateY(-4px)}
+.bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:var(--soft);border-bottom:1px solid var(--line)}
+.bar i{width:10px;height:10px;border-radius:50%;background:#d3d7df}
+.bar em{margin-left:10px;font:500 12px/1 var(--mono);color:var(--muted);font-style:normal}
+.frame img{display:block;width:100%;height:auto}
+.frame figcaption{font-size:14px;color:var(--muted);padding:11px 14px;border-top:1px solid var(--line)}
 
-footer{padding:40px 0 72px;border-top:1px solid var(--line)}
-:focus-visible{outline:2px solid #ba945d;outline-offset:3px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin:44px 0 0;padding:0;list-style:none}
+.tools li{font:500 12.5px/1 var(--mono);padding:8px 12px;border:1px solid var(--line);border-radius:6px;color:var(--text);background:var(--soft)}
+.fine{font-size:14px;color:var(--muted);margin-top:18px;max-width:760px}
+
+footer{border-top:2px solid var(--ink);padding:72px 0 88px}
+footer h2{font:800 clamp(34px,6vw,64px)/1 var(--head);letter-spacing:-.03em;color:var(--ink);margin:0 0 28px}
+footer h2 span{color:var(--accent)}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track i,.frame,.btn{transition:none}}
+@media(max-width:560px){.bars li{grid-template-columns:84px 1fr 34px;gap:8px}}
 </style>
 </head>
 <body>
 
-<header class="top">
+<header class="hero">
   <div class="wrap">
-    <div class="text">
-      <h1>Virgilio Paglinawan Jr.</h1>
-      <p class="lede">SEO and GEO specialist. I plan and build WordPress sites with clean markup, structured data and crawlable content. I own the technical decisions and use prompt engineering to direct AI tools like Claude Code through implementation.</p>
-      <p class="contact">
-        <a href="mailto:virgiliopaglinawan@gmail.com">virgiliopaglinawan@gmail.com</a>
-        <a href="https://linkedin.com/in/virgilio024">LinkedIn</a>
-      </p>
+    <div class="label"><b>●</b> SEO and GEO specialist</div>
+    <h1>Virgilio<br>Paglinawan<span>.</span></h1>
+    <p class="lede">I plan and build WordPress sites with clean markup, structured data and crawlable content. I own the technical decisions and use prompt engineering to direct AI tools like Claude Code through implementation.</p>
+    <div class="cta">
+      <a class="btn solid" href="mailto:virgiliopaglinawan@gmail.com">Email me</a>
+      <a class="btn line" href="https://linkedin.com/in/virgilio024">LinkedIn</a>
     </div>
   </div>
 </header>
@@ -74,61 +118,80 @@ footer{padding:40px 0 72px;border-top:1px solid var(--line)}
 
 <section class="case" id="desertva">
   <div class="wrap">
-    <div class="case-head">
-      <h2>desertva.com</h2>
-      <a class="visit" href="https://desertva.com" rel="noopener">Visit the site</a>
+    <div class="case-top">
+      <span class="label"><b>01</b> &nbsp;Aug 2026 to present</span>
+      <a class="visit" href="https://desertva.com" rel="noopener">Visit desertva.com</a>
     </div>
-    <p class="meta">Managed virtual assistants in Dubai. SEO and GEO Specialist, Aug 2026 to present.</p>
+    <h2>desertva.com</h2>
+    <p class="meta">Managed virtual assistants in Dubai. My role: SEO and GEO Specialist.</p>
 
-    <div class="text">
-      <p class="summary">I own the site end to end: theme architecture, technical SEO, AI search readiness and conversion paths. I decide what ships, direct Claude Code through prompts and written specs, and validate each release against audits and Search Console.</p>
-    </div>
+    <p class="summary">I own the site end to end: theme architecture, technical SEO, AI search readiness and conversion paths. I decide what ships, direct Claude Code through prompts and written specs, and validate each release against audits and Search Console.</p>
 
     <div class="stats">
       <div class="stat"><b>+31%</b><span>daily clicks after launch</span></div>
       <div class="stat"><b>+23%</b><span>daily impressions after launch</span></div>
-      <div class="stat"><b>581</b><span>clicks from 3,470 impressions last quarter (16.7% CTR)</span></div>
-      <div class="stat"><b>75 to 89</b><span>my audit score out of 100, 1 Oct to 1 Nov</span></div>
+      <div class="stat"><b>581</b><span>clicks from 3,470 impressions last quarter, 16.7% CTR</span></div>
+      <div class="stat"><b>75 → 89</b><span>my audit score out of 100, 1 Oct to 1 Nov</span></div>
     </div>
 
-    <div class="text">
-      <h3>What I did</h3>
-      <ul>
-        <li>Specified a custom WordPress theme built from the brand kit, with no page builder and no paid plugins. I review each release before it goes live, and Claude Code writes the implementation.</li>
-        <li>Configured Rank Math for XML sitemaps, robots directives, canonicals, JSON-LD entity markup and 301 redirects for retired URLs.</li>
-        <li>Structured the content for retrieval: answer-first posts on buyer questions, each claim tied to a source.</li>
-        <li>Published llms.txt and verified that the major AI crawlers and Googlebot receive the full rendered page.</li>
-        <li>Added a role finder and an interactive task audit tool as conversion paths.</li>
-        <li>Re-audited the live site on a schedule to confirm each fix held.</li>
-      </ul>
+    <div class="grid">
+      <div>
+        <h3>What I did</h3>
+        <ul class="did">
+          <li>Specified a custom WordPress theme built from the brand kit, with no page builder and no paid plugins. I review each release before it goes live, and Claude Code writes the implementation.</li>
+          <li>Configured Rank Math for XML sitemaps, robots directives, canonicals, JSON-LD entity markup and 301 redirects for retired URLs.</li>
+          <li>Structured the content for retrieval: answer-first posts on buyer questions, each claim tied to a source.</li>
+          <li>Published llms.txt and verified that the major AI crawlers and Googlebot receive the full rendered page.</li>
+          <li>Added a role finder and an interactive task audit tool as conversion paths.</li>
+          <li>Re-audited the live site on a schedule to confirm each fix held.</li>
+        </ul>
+      </div>
+      <div class="chart two" id="chart-dva">
+        <h3>Audit scores by category</h3>
+        <div class="key"><span class="then">1 Oct</span><span>1 Nov</span></div>
+        <ul class="bars">
+          <li><span class="n">Technical</span><div class="track"><i class="then" style="--w:88%"></i><i class="now" style="--w:94%"></i></div><span class="v">94</span></li>
+          <li><span class="n">Content</span><div class="track"><i class="then" style="--w:70%"></i><i class="now" style="--w:78%"></i></div><span class="v">78</span></li>
+          <li><span class="n">On-page</span><div class="track"><i class="then" style="--w:72%"></i><i class="now" style="--w:95%"></i></div><span class="v">95</span></li>
+          <li><span class="n">Schema</span><div class="track"><i class="then" style="--w:68%"></i><i class="now" style="--w:94%"></i></div><span class="v">94</span></li>
+          <li><span class="n">Speed</span><div class="track"><i class="then" style="--w:72%"></i><i class="now" style="--w:88%"></i></div><span class="v">88</span></li>
+          <li><span class="n">AI search</span><div class="track"><i class="then" style="--w:78%"></i><i class="now" style="--w:86%"></i></div><span class="v">86</span></li>
+          <li><span class="n">Images</span><div class="track"><i class="then" style="--w:75%"></i><i class="now" style="--w:92%"></i></div><span class="v">92</span></li>
+        </ul>
+        <p class="chart-note">Speed is carried over from the 30 Oct check.</p>
+      </div>
     </div>
 
-    <div class="shots two">
-      <figure class="shot">
+    <div class="shots a">
+      <figure class="frame">
+        <div class="bar"><i></i><i></i><i></i><em>desertva.com</em></div>
         <img src="images/desertva-process-comparison.png" alt="Desert VA homepage on desktop: a four-step hiring process and a comparison of traditional hiring with a managed virtual assistant" loading="lazy">
         <figcaption>Process steps and hiring comparison.</figcaption>
       </figure>
-      <figure class="shot">
+      <figure class="frame">
+        <div class="bar"><i></i><i></i><i></i><em>mobile, before and after</em></div>
         <img src="images/desertva-phone-hero.png" alt="Desert VA phone homepage before and after, with the hero photo moved above the headline and a shorter cookie banner" loading="lazy">
         <figcaption>Phone first screen, before and after.</figcaption>
       </figure>
     </div>
 
-    <p class="small tools">WordPress, PHP, Rank Math, JSON-LD, Search Console, GA4, llms.txt, Claude Code, prompt engineering. Traffic figures come from Search Console. Audit scores are my own judgement against a fixed rubric.</p>
+    <ul class="tools" aria-label="Tools used">
+      <li>WordPress</li><li>PHP</li><li>Rank Math</li><li>JSON-LD</li><li>Search Console</li><li>GA4</li><li>llms.txt</li><li>Claude Code</li><li>Prompt engineering</li>
+    </ul>
+    <p class="fine">Traffic figures come from Search Console. Audit scores are my own judgement against a fixed rubric.</p>
   </div>
 </section>
 
 <section class="case" id="storageinuae">
   <div class="wrap">
-    <div class="case-head">
-      <h2>storageinuae.com</h2>
-      <a class="visit" href="https://storageinuae.com" rel="noopener">Visit the site</a>
+    <div class="case-top">
+      <span class="label"><b>02</b> &nbsp;Oct 2026</span>
+      <a class="visit" href="https://storageinuae.com" rel="noopener">Visit storageinuae.com</a>
     </div>
-    <p class="meta">UAE storage lead generation. Product decisions, build and SEO by me, with AI assistance. Oct 2026.</p>
+    <h2>storageinuae.com</h2>
+    <p class="meta">UAE storage lead generation. Product decisions, build and SEO by me, with AI assistance.</p>
 
-    <div class="text">
-      <p class="summary">A storage sizing tool that gives the visitor a useful answer before asking for anything. They enter what they own, and the page calculates the volume and which units fit. No sign-up first.</p>
-    </div>
+    <p class="summary">A storage sizing tool that gives the visitor a useful answer before asking for anything. They enter what they own, and the page calculates the volume and which units fit. No sign-up first.</p>
 
     <div class="stats">
       <div class="stat"><b>1,435</b><span>automated checks across 20 test suites</span></div>
@@ -136,29 +199,49 @@ footer{padding:40px 0 72px;border-top:1px solid var(--line)}
       <div class="stat"><b>1 to 60 m³</b><span>unit selector checked against brute force at every whole volume</span></div>
     </div>
 
-    <div class="text">
-      <h3>What I did</h3>
-      <ul>
-        <li>Defined the architecture: a pure calculation engine with no DOM or state, separate from the UI, in vanilla JavaScript with no framework. I prompted Claude Code to write much of the code, and I validated it with unit tests.</li>
-        <li>Built a custom WordPress theme with a server-side lead handler. It checks a nonce and a honeypot, stores the lead before any mail is sent, then notifies by email.</li>
-        <li>Made pricing fail safe. Unpriced lines render as "They quote it", never as AED 0, and tests enforce it.</li>
-        <li>Generated page tables and FAQ structured data from a single rate file, with a check that fails the build on drift.</li>
-        <li>Audited the live site, prioritised the fixes (metadata, internal linking, header hardening, served JS cleanup), and verified them after release.</li>
-      </ul>
+    <div class="grid">
+      <div>
+        <h3>What I did</h3>
+        <ul class="did">
+          <li>Defined the architecture: a pure calculation engine with no DOM or state, separate from the UI, in vanilla JavaScript with no framework. I prompted Claude Code to write much of the code, and I validated it with unit tests.</li>
+          <li>Built a custom WordPress theme with a server-side lead handler. It checks a nonce and a honeypot, stores the lead before any mail is sent, then notifies by email.</li>
+          <li>Made pricing fail safe. Unpriced lines render as "They quote it", never as AED 0, and tests enforce it.</li>
+          <li>Generated page tables and FAQ structured data from a single rate file, with a check that fails the build on drift.</li>
+          <li>Audited the live site, prioritised the fixes (metadata, internal linking, header hardening, served JS cleanup), and verified them after release.</li>
+        </ul>
+      </div>
+      <div class="chart" id="chart-siu">
+        <h3>First audit, by category</h3>
+        <ul class="bars">
+          <li><span class="n">Technical</span><div class="track"><i style="--w:80%"></i></div><span class="v">80</span></li>
+          <li><span class="n">Content</span><div class="track"><i style="--w:74%"></i></div><span class="v">74</span></li>
+          <li><span class="n">On-page</span><div class="track"><i style="--w:82%"></i></div><span class="v">82</span></li>
+          <li><span class="n">Schema</span><div class="track"><i style="--w:62%"></i></div><span class="v">62</span></li>
+          <li><span class="n">Speed</span><div class="track"><i style="--w:85%"></i></div><span class="v">85</span></li>
+          <li><span class="n">AI search</span><div class="track"><i style="--w:76%"></i></div><span class="v">76</span></li>
+          <li><span class="n">Images</span><div class="track"><i style="--w:88%"></i></div><span class="v">88</span></li>
+        </ul>
+        <p class="chart-note">27 Oct, before the fixes shipped.</p>
+      </div>
     </div>
 
-    <div class="shots even">
-      <figure class="shot">
+    <div class="shots b">
+      <figure class="frame">
+        <div class="bar"><i></i><i></i><i></i><em>storageinuae.com</em></div>
         <img src="images/storageinuae-calculator-desktop.png" alt="StorageinUAE calculator, step one, asking which emirate the items are collected from" loading="lazy">
         <figcaption>Calculator, step one.</figcaption>
       </figure>
-      <figure class="shot">
+      <figure class="frame">
+        <div class="bar"><i></i><i></i><i></i><em>storageinuae.com</em></div>
         <img src="images/storageinuae-size-guide.png" alt="StorageinUAE storage size guide on desktop" loading="lazy">
         <figcaption>Size guide, built from the same rate file.</figcaption>
       </figure>
     </div>
 
-    <p class="small tools">WordPress, PHP, JavaScript, Node tests, Python build tools, Rank Math, JSON-LD, WP Mail SMTP, Claude Code, prompt engineering. The audit score is my own judgement against a fixed rubric.</p>
+    <ul class="tools" aria-label="Tools used">
+      <li>WordPress</li><li>PHP</li><li>JavaScript</li><li>Node tests</li><li>Python build tools</li><li>Rank Math</li><li>JSON-LD</li><li>WP Mail SMTP</li><li>Claude Code</li><li>Prompt engineering</li>
+    </ul>
+    <p class="fine">The audit score is my own judgement against a fixed rubric.</p>
   </div>
 </section>
 
@@ -166,9 +249,23 @@ footer{padding:40px 0 72px;border-top:1px solid var(--line)}
 
 <footer>
   <div class="wrap">
-    <p>Get in touch: <a href="mailto:virgiliopaglinawan@gmail.com">virgiliopaglinawan@gmail.com</a></p>
+    <h2>Want it found<span>?</span></h2>
+    <div class="cta">
+      <a class="btn solid" href="mailto:virgiliopaglinawan@gmail.com">virgiliopaglinawan@gmail.com</a>
+      <a class="btn line" href="https://linkedin.com/in/virgilio024">LinkedIn</a>
+    </div>
   </div>
 </footer>
 
+<script>
+(function(){
+  var charts=document.querySelectorAll('.chart');
+  if(!('IntersectionObserver' in window)){charts.forEach(function(c){c.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.25});
+  charts.forEach(function(c){io.observe(c)});
+})();
+</script>
 </body>
 </html>

@@ -65,6 +65,8 @@ p{margin:0 0 1em}
 .btn.solid{background:var(--ink);color:#fff}
 .btn:hover{transform:translateY(-2px)}
 .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn.solid::after{content:"92";display:inline-block;margin-left:10px;transition:transform .15s}
+.btn.solid:hover::after{transform:translateX(4px)}
 .btn.line:hover{background:var(--ink);color:#fff}
 
 /* project */
@@ -78,7 +80,7 @@ p{margin:0 0 1em}
 
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:48px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stat{padding:26px 22px 26px 0}
-.stat b{display:block;font:800 clamp(34px,5vw,50px)/1 var(--head);letter-spacing:-.03em;color:var(--ink)}
+.stat b{font-variant-numeric:tabular-nums;display:block;font:800 clamp(34px,5vw,50px)/1 var(--head);letter-spacing:-.03em;color:var(--ink)}
 .stat span{display:block;font-size:14.5px;line-height:1.45;color:var(--muted);margin-top:10px;max-width:200px}
 
 .grid{max-width:780px;margin-top:56px}
@@ -86,6 +88,9 @@ h3{font:700 22px/1.2 var(--head);color:var(--ink);margin:0 0 20px}
 ul.did{list-style:none;margin:0;padding:0}
 ul.did li{position:relative;padding:0 0 0 26px;margin-bottom:16px;font-size:17px;line-height:1.6}
 ul.did li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;background:var(--accent);border-radius:2px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
 
 /* screenshots */
 .shots{display:grid;grid-template-columns:1fr;gap:28px;margin-top:64px;align-items:start}
@@ -107,7 +112,7 @@ footer h2{font:800 clamp(34px,6vw,64px)/1 var(--head);letter-spacing:-.03em;colo
 footer h2 span{color:var(--accent)}
 
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.frame,.btn{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.frame,.btn,.btn::after,.reveal{transition:none}}
 </style>
 </head>
 <body>
@@ -138,10 +143,10 @@ footer h2 span{color:var(--accent)}
     <p class="summary">I own the site end to end: theme architecture, technical SEO, AI search readiness and conversion paths. I decide what ships, direct Claude Code through prompts and written specs, and validate each release against audits and Search Console.</p>
 
     <div class="stats">
-      <div class="stat"><b>+31%</b><span>daily clicks after launch</span></div>
-      <div class="stat"><b>+23%</b><span>daily impressions after launch</span></div>
-      <div class="stat"><b>581</b><span>clicks from 3,470 impressions last quarter, 16.7% CTR</span></div>
-      <div class="stat"><b>Pos. 12</b><span>average position in the target market</span></div>
+      <div class="stat"><b data-count="31" data-prefix="+" data-suffix="%">+31%</b><span>daily clicks after launch</span></div>
+      <div class="stat"><b data-count="23" data-prefix="+" data-suffix="%">+23%</b><span>daily impressions after launch</span></div>
+      <div class="stat"><b data-count="581">581</b><span>clicks from 3,470 impressions last quarter, 16.7% CTR</span></div>
+      <div class="stat"><b data-count="12" data-prefix="Pos. ">Pos. 12</b><span>average position in the target market</span></div>
     </div>
 
     <div class="grid">
@@ -234,5 +239,38 @@ footer h2 span{color:var(--accent)}
   </div>
 </footer>
 
+<script>
+(function(){
+  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(calm||!('IntersectionObserver' in window))return;
+  var els=document.querySelectorAll('.case .summary,.case .stats,.case .grid,.case .shots,.case .tools,.case .fine,footer .wrap');
+  els.forEach(function(el){el.classList.add('reveal')});
+
+  function countUp(b){
+    var end=+b.dataset.count,pre=b.dataset.prefix||'',suf=b.dataset.suffix||'',t0=null,dur=900;
+    function step(t){
+      if(t0===null)t0=t;
+      var k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);
+      b.textContent=pre+Math.round(end*e).toLocaleString('en-US')+suf;
+      if(k<1)requestAnimationFrame(step);else b.textContent=pre+end.toLocaleString('en-US')+suf;
+    }
+    b.textContent=pre+'0'+suf;
+    requestAnimationFrame(step);
+  }
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(countUp);
+      io.unobserve(e.target);
+    });
+  },{threshold:.15});
+  els.forEach(function(el){io.observe(el)});
+
+  // failsafe: never leave content hidden
+  setTimeout(function(){els.forEach(function(el){el.classList.add('in')})},4000);
+})();
+</script>
 </body>
 </html>

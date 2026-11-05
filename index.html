@@ -52,29 +52,11 @@ p{margin:0 0 1em}
 .stat b{display:block;font:800 clamp(34px,5vw,50px)/1 var(--head);letter-spacing:-.03em;color:var(--ink)}
 .stat span{display:block;font-size:14.5px;line-height:1.45;color:var(--muted);margin-top:10px;max-width:200px}
 
-.grid{display:grid;grid-template-columns:1fr;gap:48px;margin-top:56px}
-@media(min-width:900px){.grid{grid-template-columns:1.15fr 1fr;gap:64px}}
+.grid{max-width:780px;margin-top:56px}
 h3{font:700 22px/1.2 var(--head);color:var(--ink);margin:0 0 20px}
 ul.did{list-style:none;margin:0;padding:0}
 ul.did li{position:relative;padding:0 0 0 26px;margin-bottom:16px;font-size:17px;line-height:1.6}
 ul.did li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;background:var(--accent);border-radius:2px}
-
-/* score bars */
-.bars{margin:0;padding:0;list-style:none}
-.bars li{display:grid;grid-template-columns:96px 1fr 38px;align-items:center;gap:12px;margin-bottom:12px;font-size:14.5px}
-.bars .n{color:var(--text)}
-.bars .v{font:500 13px/1 var(--mono);color:var(--ink);text-align:right}
-.track{position:relative;height:12px;background:var(--soft);border-radius:6px;overflow:hidden}
-.track i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:var(--accent);width:var(--w);transition:width .9s cubic-bezier(.2,.7,.2,1)}
-.js .track i{width:0}
-.js .in .track i{width:var(--w)}
-.two .track{height:14px}
-.two .track i.then{background:#c9ced8;height:6px;top:0;bottom:auto}
-.two .track i.now{height:8px;top:6px;bottom:auto}
-.key{display:flex;gap:18px;font-size:13.5px;color:var(--muted);margin:0 0 16px}
-.key span::before{content:"";display:inline-block;width:12px;height:6px;border-radius:3px;margin-right:7px;vertical-align:middle;background:var(--accent)}
-.key span.then::before{background:#c9ced8}
-.chart-note{font-size:13.5px;color:var(--muted);margin:16px 0 0}
 
 /* screenshots */
 .shots{display:grid;grid-template-columns:1fr;gap:28px;margin-top:64px;align-items:start}
@@ -96,8 +78,7 @@ footer h2{font:800 clamp(34px,6vw,64px)/1 var(--head);letter-spacing:-.03em;colo
 footer h2 span{color:var(--accent)}
 
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track i,.frame,.btn{transition:none}}
-@media(max-width:560px){.bars li{grid-template-columns:84px 1fr 34px;gap:8px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.frame,.btn{transition:none}}
 </style>
 </head>
 <body>
@@ -131,7 +112,7 @@ footer h2 span{color:var(--accent)}
       <div class="stat"><b>+31%</b><span>daily clicks after launch</span></div>
       <div class="stat"><b>+23%</b><span>daily impressions after launch</span></div>
       <div class="stat"><b>581</b><span>clicks from 3,470 impressions last quarter, 16.7% CTR</span></div>
-      <div class="stat"><b>75 → 89</b><span>my audit score out of 100, 1 Oct to 1 Nov</span></div>
+      <div class="stat"><b>Pos. 12</b><span>average position in the target market</span></div>
     </div>
 
     <div class="grid">
@@ -145,20 +126,6 @@ footer h2 span{color:var(--accent)}
           <li>Added a role finder and an interactive task audit tool as conversion paths.</li>
           <li>Re-audited the live site on a schedule to confirm each fix held.</li>
         </ul>
-      </div>
-      <div class="chart two" id="chart-dva">
-        <h3>Audit scores by category</h3>
-        <div class="key"><span class="then">1 Oct</span><span>1 Nov</span></div>
-        <ul class="bars">
-          <li><span class="n">Technical</span><div class="track"><i class="then" style="--w:88%"></i><i class="now" style="--w:94%"></i></div><span class="v">94</span></li>
-          <li><span class="n">Content</span><div class="track"><i class="then" style="--w:70%"></i><i class="now" style="--w:78%"></i></div><span class="v">78</span></li>
-          <li><span class="n">On-page</span><div class="track"><i class="then" style="--w:72%"></i><i class="now" style="--w:95%"></i></div><span class="v">95</span></li>
-          <li><span class="n">Schema</span><div class="track"><i class="then" style="--w:68%"></i><i class="now" style="--w:94%"></i></div><span class="v">94</span></li>
-          <li><span class="n">Speed</span><div class="track"><i class="then" style="--w:72%"></i><i class="now" style="--w:88%"></i></div><span class="v">88</span></li>
-          <li><span class="n">AI search</span><div class="track"><i class="then" style="--w:78%"></i><i class="now" style="--w:86%"></i></div><span class="v">86</span></li>
-          <li><span class="n">Images</span><div class="track"><i class="then" style="--w:75%"></i><i class="now" style="--w:92%"></i></div><span class="v">92</span></li>
-        </ul>
-        <p class="chart-note">Speed is carried over from the 30 Oct check.</p>
       </div>
     </div>
 
@@ -178,7 +145,7 @@ footer h2 span{color:var(--accent)}
     <ul class="tools" aria-label="Tools used">
       <li>WordPress</li><li>PHP</li><li>Rank Math</li><li>JSON-LD</li><li>Search Console</li><li>GA4</li><li>llms.txt</li><li>Claude Code</li><li>Prompt engineering</li>
     </ul>
-    <p class="fine">Traffic figures come from Search Console. Audit scores are my own judgement against a fixed rubric.</p>
+    <p class="fine">Traffic figures come from Search Console.</p>
   </div>
 </section>
 
@@ -193,12 +160,6 @@ footer h2 span{color:var(--accent)}
 
     <p class="summary">A storage sizing tool that gives the visitor a useful answer before asking for anything. They enter what they own, and the page calculates the volume and which units fit. No sign-up first.</p>
 
-    <div class="stats">
-      <div class="stat"><b>1,435</b><span>automated checks across 20 test suites</span></div>
-      <div class="stat"><b>78/100</b><span>first SEO audit, on a site about ten days old</span></div>
-      <div class="stat"><b>1 to 60 m³</b><span>unit selector checked against brute force at every whole volume</span></div>
-    </div>
-
     <div class="grid">
       <div>
         <h3>What I did</h3>
@@ -209,19 +170,6 @@ footer h2 span{color:var(--accent)}
           <li>Generated page tables and FAQ structured data from a single rate file, with a check that fails the build on drift.</li>
           <li>Audited the live site, prioritised the fixes (metadata, internal linking, header hardening, served JS cleanup), and verified them after release.</li>
         </ul>
-      </div>
-      <div class="chart" id="chart-siu">
-        <h3>First audit, by category</h3>
-        <ul class="bars">
-          <li><span class="n">Technical</span><div class="track"><i style="--w:80%"></i></div><span class="v">80</span></li>
-          <li><span class="n">Content</span><div class="track"><i style="--w:74%"></i></div><span class="v">74</span></li>
-          <li><span class="n">On-page</span><div class="track"><i style="--w:82%"></i></div><span class="v">82</span></li>
-          <li><span class="n">Schema</span><div class="track"><i style="--w:62%"></i></div><span class="v">62</span></li>
-          <li><span class="n">Speed</span><div class="track"><i style="--w:85%"></i></div><span class="v">85</span></li>
-          <li><span class="n">AI search</span><div class="track"><i style="--w:76%"></i></div><span class="v">76</span></li>
-          <li><span class="n">Images</span><div class="track"><i style="--w:88%"></i></div><span class="v">88</span></li>
-        </ul>
-        <p class="chart-note">27 Oct, before the fixes shipped.</p>
       </div>
     </div>
 
@@ -241,7 +189,6 @@ footer h2 span{color:var(--accent)}
     <ul class="tools" aria-label="Tools used">
       <li>WordPress</li><li>PHP</li><li>JavaScript</li><li>Node tests</li><li>Python build tools</li><li>Rank Math</li><li>JSON-LD</li><li>WP Mail SMTP</li><li>Claude Code</li><li>Prompt engineering</li>
     </ul>
-    <p class="fine">The audit score is my own judgement against a fixed rubric.</p>
   </div>
 </section>
 
@@ -257,15 +204,5 @@ footer h2 span{color:var(--accent)}
   </div>
 </footer>
 
-<script>
-(function(){
-  var charts=document.querySelectorAll('.chart');
-  if(!('IntersectionObserver' in window)){charts.forEach(function(c){c.classList.add('in')});return}
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
-  },{threshold:.25});
-  charts.forEach(function(c){io.observe(c)});
-})();
-</script>
 </body>
 </html>
